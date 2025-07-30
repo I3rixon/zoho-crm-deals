@@ -27,5 +27,14 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/zoho-form', [ZohoFormController::class, 'index']);
 Route::post('/zoho-form', [ZohoFormController::class, 'store']);
+/*Route::get('/zoho/token', function () {
+    $code = 'treterer'; 
+    $token = \App\Services\ZohoAuthService::exchangeCodeForToken($code);
+    
+    dd([
+        'access_token' => $token->getAccessToken(),
+        'refresh_token' => $token->getRefreshToken(),
+    ]);
+});*/
 
 require __DIR__.'/auth.php';
